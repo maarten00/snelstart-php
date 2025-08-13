@@ -20,4 +20,6 @@ $boekingConnector = new \SnelstartPHP\Connector\V2\BoekingConnector($connection)
 
 foreach ($boekingConnector->findInkoopfacturen(null, true) as $inkoopboeking) {
     var_dump($inkoopboeking);
+    // To retrieve the full Inkoopboeking object, you can use the findInkoopboeking method
+    $inkoopBoeking = $boekingConnector->findInkoopboeking($inkoopboeking->getInkoopboeking()->getId());
 }
